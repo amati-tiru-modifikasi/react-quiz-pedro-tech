@@ -15,7 +15,7 @@ export default function Quiz() {
     const [optionChosen, setOptionChosen] = useState('');
 
     const nextQuestion = () => {
-        if(Questions[currQuestion].answer == optionChosen) {
+        if(Questions[currQuestion].answer === optionChosen) {
             setScore(score + 1)
         }
         console.log(score)
@@ -23,7 +23,7 @@ export default function Quiz() {
     }
 
     const finishQuiz = () => {
-        if(Questions[currQuestion].answer == optionChosen) {
+        if(Questions[currQuestion].answer === optionChosen) {
             setScore(score + 1)
         }
         setGameState('endScreen');
@@ -38,7 +38,7 @@ export default function Quiz() {
                 <button onClick={() => setOptionChosen('C')}>{Questions[currQuestion].optionC}</button>
                 <button onClick={() => setOptionChosen('D')}>{Questions[currQuestion].optionD}</button>
             </div>
-            {currQuestion == Questions.length - 1 ? (
+            {currQuestion === Questions.length - 1 ? (
                 <button onClick={() => finishQuiz()}>Selesai</button>
             ) : (
                 <button onClick={() => nextQuestion()}>Next</button>

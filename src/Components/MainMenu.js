@@ -5,7 +5,7 @@ import "../App.css"
 export default function MainMenu() {
 
     // Kirim state ke Context Hooks
-    const {gameState, setGameState} = useContext(QuizContext);
+    const { setGameState } = useContext(QuizContext);
 
     return (
         <div className="Menu">
